@@ -1,0 +1,5 @@
+.vaccineType{
+    display: flex;
+    flex-direction: column;
+}
+
