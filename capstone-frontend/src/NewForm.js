@@ -63,8 +63,16 @@ const vaccine_type = [
 function NewForm(){
     // useState for vaccine number
     const [vaccine, setVaccine] = React.useState(0);
+    
     // useState for vaccine type
-    const [vaccineType, setVaccineType] = React.useState("");
+    const [vaccineType, setVaccineType] = React.useState([]);
+    const [info, setInfo] = React.useState({
+        fname: "",
+        lname: "",
+        contact: null,
+        vaccine: 0,
+        vaccineType: [],
+    })
 
     const handleVaccineChange = (event) => {
         event.preventDefault();
@@ -74,33 +82,58 @@ function NewForm(){
     
     const handleVaccineTypeChange = (event) => {
         event.preventDefault();
-        setVaccineType(event.target.value)
+        setVaccineType(arr=>[...arr,event.target.value])
+        
     }
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(info)
+    }
+
+    function handleChange(evt) {
+        const value = evt.target.value;
+        setInfo({
+          ...info,
+          [evt.target.name]: value
+        });
+      }
+
+    
     return(
+        <div className="card mt-4" style={{width: '29rem'}}>
+
+        
         <Box
         component="form" 
         sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
+          '& .MuiTextField-root': { m: 1 },
         }}
         className="form-container"
         >
-            <h1>No(Co)vid-19</h1>
-            <h3>Form for Vaccine checking</h3>
+            <h1 className="text-center pt-5">No(Co)vid-19</h1>
+            <h3 className="text-center">Form for Vaccine checking</h3>
             <div>
                 <TextField
                     required
                     id="standard-password-input"
                     label="Firstname"
-                    type="firstname"
+                    type="text"
+                    name="fname"
                     variant="standard"
+                    value={info.fname}
+                    onChange={handleChange}
                 />
                 <TextField
                     required
                     id="standard-password-input"
                     label="Lastname"
                     type="lastname"
+                    name="lname"
                     variant="standard"
+                    value = {info.lname}
+                    onChange = {handleChange}
                 />
             </div>
             <div className='contact'>
@@ -109,7 +142,10 @@ function NewForm(){
                     id="standard-password-input"
                     label="Contact"
                     type="contact"
+                    name="contact"
                     variant="standard"
+                    value={info.contact}
+                    onChange = {handleChange}
                 />
             </div> 
             <div className="vac_num">
@@ -136,8 +172,8 @@ function NewForm(){
                         id="select-vaccine-type"
                         select
                         label="Select type of vaccine #"
-                        // value={vaccineType}
-                        // onChange={handleVaccineTypeChange}
+                        value={vaccineType[i]}
+                        onChange={handleVaccineTypeChange}
                         helperText="Please select type of vaccine you received"
                         variant="standard"
                     >
@@ -148,11 +184,13 @@ function NewForm(){
                         ))}
                     </TextField> 
                 ))}      
-                Type of Vaccine: {vaccineType} 
             </div>
-            <button className='buttonSubmit'>Submit</button>
-            <button className='buttonCancel'>Cancel</button>
+            <div className="text-center pb-3">
+                <button className='btn btn-success me-4' onClick={handleOnSubmit}>Submit</button>
+                <button className='btn btn-secondary'>Cancel</button>
+            </div>
         </Box>
+            </div>
     );
 }
 
