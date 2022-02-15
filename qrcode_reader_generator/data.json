@@ -3,11 +3,12 @@
         {
             "firstname": "nattanan",
             "lastname": "poolpaodumrongk",
-            "age": "22",
             "contact": "0957395770",
             "vaccine_1": "Moderna",
             "vaccine_2": "Moderna",
-            "vaccination_status": "fully_vaccinated"
+            "vaccine_3": "NULL",
+            "vaccine_4": "NULL",
+            "vaccination_status": 1
         }
     ]
 }
