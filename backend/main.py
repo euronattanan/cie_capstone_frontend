@@ -13,8 +13,6 @@ api = Api(app)
 user_detail_post_args = reqparse.RequestParser()
 user_detail_post_args.add_argument("information", type=str, help="Please send the user detail", required=True)
 
-
-
 class GetQrCode(Resource):
     def post(self, user_id):
         args = user_detail_post_args.parse_args()
