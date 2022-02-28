@@ -15,7 +15,7 @@ testJsonData = {
     }
 }
 headers = {'Content-type': 'application/json'}
-response = requests.post(BASE + 'getqrcode/1', json=testJsonData, headers=headers)
+response = requests.get(BASE + 'displayqrcode', json=testJsonData, headers=headers)
 
 #status 200 = ok, nothing crash
 print(response)
