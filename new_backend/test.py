@@ -8,7 +8,7 @@ BASE = 'http://127.0.0.1:5000/'
 data = {
     'firstname': 'Euro',
     'lastname': 'Euro',
-    'contact': '0957395770',
+    'contact': 'Euro',
     'numberOfVaccines': 2,
     'doses': [
         {
