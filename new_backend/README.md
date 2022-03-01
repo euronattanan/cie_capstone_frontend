@@ -20,6 +20,6 @@ python main.py
 
 In a separate terminal, run:
 ```
-test.py
+python test.py
 ```
 The browser should be opened and you should be able you view and scan your qr code.
