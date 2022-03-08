@@ -1,0 +1,27 @@
+.container {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  margin-top: 150px; */
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.card {
+  padding: 70px 70px;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.btn {
+  width: 7rem;
+}
+
+@media screen and (max-width: 859px) {
+  .card {
+    padding: 20px 20px;
+  }
+}

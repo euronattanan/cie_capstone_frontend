@@ -1,0 +1,101 @@
+<div class="container">
+  <div class="card shadow">
+    <h1 class="text-center">NO(CO)VID - 19</h1>
+    <form [formGroup]="vaccineForm" (submit)="onSaveVaccine()">
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            style="width: 100%"
+          >
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" />
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            style="width: 100%"
+          >
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <mat-form-field
+            class="example-full-width"
+            appearance="fill"
+            style="width: 100%"
+          >
+            <mat-label>Contact</mat-label>
+            <input matInput formControlName="contact" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mt-3 mb-3">
+          <h3>2 doses of vaccine are required*</h3>
+          <mat-form-field appearance="fill" style="width: 100%">
+            <mat-label>Number of dose(s)</mat-label>
+            <mat-select
+              formControlName="numberOfVaccines"
+              (selectionChange)="onChangeVaccines($event)"
+            >
+              <mat-option *ngFor="let item of numberOfVaccine" [value]="item">
+                {{ item }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div
+        class="row mb-3"
+        *ngFor="let vaccine of vaccineFormGroups; let i = index"
+      >
+        <div class="col-md-6">
+          <div [formGroup]="vaccine">
+            <mat-form-field appearance="fill" style="width: 100%">
+              <mat-label *ngIf="i === 2">Dose {{ i + 1 }} (booster)</mat-label>
+
+              <mat-label *ngIf="i !== 2">Dose {{ i + 1 }}</mat-label>
+              <mat-select formControlName="vaccine">
+                <mat-option *ngFor="let item of vaccineList" [value]="item">
+                  {{ item }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <p>Information : {{ vaccineForm.value | json }}</p>
+
+      <div class="text-center">
+        <button class="btn btn-success me-2" type="submit">Save</button>
+        <!-- <button class="btn btn-secondary" type="button" (click)="onCancel()">
+          cancel
+        </button> -->
+      </div>
+    </form>
+    <div class="text-center mt-4" *ngIf="isShowImage">
+      <h4>Please scan QRCODE within {{ time }} seconds</h4>
+      <qrcode
+        [qrdata]="qrdata"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+    </div>
+  </div>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-spin"
+>
+  <p style="font-size: 20px; color: white">Loading...</p></ngx-spinner
+>

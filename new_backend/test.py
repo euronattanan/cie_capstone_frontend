@@ -26,17 +26,19 @@ post_resp = response_post.json()['data']
 print("post_resp: ", "'" + post_resp + "'")
 print("post_resp type: ", type(post_resp))
 
-time.sleep(3)
+
+#get 
+# time.sleep(3)
 
 
+# # response_get = requests.get(str(post_resp))
 # response_get = requests.get(str(post_resp))
-response_get = requests.get(str(post_resp))
-# print('get response: ', response_get.json())
+# # print('get response: ', response_get.json())
 
-new = 2 #open in new tab if possible
-url = (post_resp)
+# new = 2 #open in new tab if possible
+# url = (post_resp)
 
-webbrowser.open(url,new=new)
+# webbrowser.open(url,new=new)
 
 
 
