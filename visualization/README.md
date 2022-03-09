@@ -7,9 +7,11 @@
 /user data is the name of the child object in firebase realtime database and /.json is the type of data stored in firebase realtime database
 
 ## Syntax
-  https://<project-name>.firebaseio.com/<child object name>/.json
-  eg. https://novid19-screening-system-default-rtdb.firebaseio.com/user_data/.json
+
+* https://"project-name".firebaseio.com/"child-object-name"/.json
+* Eg. https://novid19-screening-system-default-rtdb.firebaseio.com/user_data/.json
  
 ### Alternative syntax 
-  https://<project-name>.firebaseio.com/<child object name>.json 
-  eg. https://novid19-screening-system-default-rtdb.firebaseio.com/user_data.json
+  
+* https://"project-name".firebaseio.com/"child-object-name.json 
+* Eg. https://"project-name".firebaseio.com/user_data.json
