@@ -86,7 +86,7 @@ export class AppComponent implements OnInit {
       this.vaccineForm.value.doses = this.doses;
 
       // Send to Euro
-      this.http.post('url', this.vaccineForm.value).subscribe({
+      this.http.post('https://61011293-56t1i2l0l6gb10s4.socketxp.com', this.vaccineForm.value).subscribe({
         next: (response: any) => {
           console.log(response);
           // ยัดมาในนี้
