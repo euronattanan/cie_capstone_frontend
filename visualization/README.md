@@ -14,4 +14,4 @@
 ### Alternative syntax 
   
 * https://"project-name".firebaseio.com/"child-object-name.json 
-* Eg. https://"project-name".firebaseio.com/user_data.json
+* Eg. https://novid19-screening-system-default-rtdb.firebaseio.com/user_data.json
