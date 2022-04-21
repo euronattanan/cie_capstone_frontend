@@ -1,6 +1,7 @@
 <div class="container">
   <div class="card shadow">
-    <h1 class="text-center">NO(CO)VID - 19</h1>
+    <h1 class="text-center" style="font-weight: bold;">NO(CO)VID - 19</h1>
+    <p class="text-center">Please fill out this form to recieve a QR Code <br> In order to scan to enter the area</p> 
     <form [formGroup]="vaccineForm" (submit)="onSaveVaccine()">
       <div class="row mt-3">
         <div class="col-md-6">
@@ -71,7 +72,7 @@
           </div>
         </div>
       </div>
-      <p>Information : {{ vaccineForm.value | json }}</p>
+      <!-- <p>Information : {{ vaccineForm.value | json }}</p> -->
 
       <div class="text-center">
         <button class="btn btn-success me-2" type="submit">Save</button>
@@ -81,7 +82,7 @@
       </div>
     </form>
     <div class="text-center mt-4" *ngIf="isShowImage">
-      <h4>Please scan QRCODE within {{ time }} seconds</h4>
+      <h4>Please use this QR Code to scan at the entrance within {{ time }} seconds</h4>
       <qrcode
         [qrdata]="qrdata"
         [width]="256"
